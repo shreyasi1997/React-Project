@@ -1,0 +1,145 @@
+
+.one-prod{
+height: 700px;
+}
+.product-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+  max-width: 100%; 
+}
+
+
+.product-image-container.zoomed {
+  transform: scale(2);
+}
+.single-product {
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+/* Product Details heading */
+.single-product h3 {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+/* Card styles */
+.card {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+
+/* Product image container styles */
+.product-image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Product image styles */
+.product-image {
+  width: 100%;
+  height: auto;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Zoom effect on product image */
+.product-image-container.zoomed .product-image {
+  transform: scale(1.1);
+}
+
+/* Button styles */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Wishlist button styles */
+.favorite-button {
+  color: red;
+}
+
+/* Cart button styles */
+.cart-button {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Price and New Price styles */
+.price-label {
+  font-size: 24px;
+  color: #333;
+}
+.container {
+  background-color: #ffffff; /* Specify your desired background color */
+}
+.product-name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Style price label */
+.price-label {
+  font-size: 18px;
+  color: #007bff; /* Adjust the color to your preference */
+}
+.button:hover {
+  background-color: #007bff; /* Change color on hover */
+  color: #fff; /* Text color on hover */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.new-price-label {
+  font-size: 20px;
+  color: red;
+}
+
+/* Product description styles */
+.description {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #555;
+}
+
+/* Star rating styles */
+.star-rating {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+/* Adjust star icon colors */
+.star-rating .MuiSvgIcon-root {
+  color: #f0ad4e;
+}
+
+/* Wishlist and Cart buttons */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* Add to Cart button styles */
+.add-to-cart-button {
+  background-color: #007bff;
+  color: #fff;
+  margin-right: 10px;
+}
+
+/* View Cart button styles */
+.view-cart-button {
+  background-color: #28a745;
+  color: #fff;
+}
+
+/* Styling for Loader component (you can customize further) */
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}

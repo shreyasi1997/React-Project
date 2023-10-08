@@ -1,0 +1,122 @@
+.profile-all{
+    height: 1200px;
+    margin-top: 10px;
+}
+.profile-all {
+    background-color: #f7f7f7;
+    min-height: 1000px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    width: 100%;
+  }
+  
+  .profile-paper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-avatar {
+    width: 150px;
+    height: 150px;
+    border: 3px solid #fff; /* Add a white border around the avatar */
+    border-radius: 50%; /* Make the avatar circular */
+  }
+  
+  .profile-heading {
+    margin-top: 20px; /* Increase the margin-top for better spacing */
+    font-weight: bold; /* Add bold font weight */
+    color: #333; /* Change text color to dark gray */
+    text-align: center; /* Center-align the heading */
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 10px;
+    text-align: center; /* Center-align the error message */
+  }
+  
+  .profile-details {
+    margin-top: 20px;
+    text-align: center; /* Center-align the profile details */
+  }
+  
+  .menu-bar {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .menu-item {
+    padding: 10px 0;
+  }
+  
+  .menu-icon {
+    min-width: 36px;
+  }
+  
+  .menu-text {
+    margin-left: 10px;
+  }
+  
+  /* Cart Item Styles */
+  .cart-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .profile-avatar {
+    width: 150px !important; /* Increase the width with !important */
+  height: 150px !important; /* Increase the height with !important */
+    border: 3px solid #fff;
+    border-radius: 50%;
+  }
+  
+  /* Additional Styling for Cart Items */
+  .cart-item .MuiListItemText-root {
+    flex: 1; /* Make the item details fill the available space */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .cart-item .MuiListItemText-root span {
+    margin-bottom: 4px; /* Add spacing between item details */
+  }
+  
+  .cart-item .MuiListItemText-root .MuiTypography-root {
+    font-size: 14px; /* Adjust font size for item details */
+    color: rgb(230, 72, 72); /* Change text color for item details */
+    margin-left: 15px;
+  }
+  
+  .cart-item .MuiListItemText-root .MuiTypography-root:first-child {
+    font-weight: bold; /* Add bold font weight for item name */
+  }
+  .cart-item-avatar{
+    height: 150px !important;
+    width: 150px !important
+  }
+  
+  .cart-item .MuiListItemText-root .MuiTypography-root:last-child {
+    font-weight: normal; /* Remove bold font weight for price */
+    color: rgba(218, 45, 45, 0.863); /* Change text color for price */
+    font-size: medium;
+  }

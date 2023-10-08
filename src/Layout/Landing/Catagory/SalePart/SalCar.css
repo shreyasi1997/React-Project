@@ -1,0 +1,17 @@
+.sale-carousel-container {
+    width: 1200px; 
+    margin: 0 auto; 
+    margin-top: 20px;
+  }
+  
+  .carousel-item {
+    padding: 16px;
+    text-align: center;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+  }
+  
+  .carousel-image {
+    width: 100%; 
+    height: auto; 
+  }

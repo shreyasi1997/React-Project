@@ -1,0 +1,91 @@
+.cart-table {
+    width: 90%;
+    border-collapse: collapse;
+    margin-top: 150px;
+    font-family: Arial, sans-serif;
+  }
+  .cart{
+      height: 850px;
+  }
+  
+  .cart-table th, .cart-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .cart-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .product-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+  }
+  
+  .quantity-button {
+    background-color: #007bff;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .quantity-button:hover {
+    background-color: #0056b3; 
+  }
+  
+  .product-quantity {
+    margin: 0 10px;
+    font-weight: bold;
+  }
+  
+  .remove-button {
+    background-color: #dc3545;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .remove-button:hover {
+    background-color: #c82333; 
+  }
+  
+  .total-amount {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .pay-button button{
+    background-color: #28a745; 
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: px;
+   
+  }
+  
+  .pay-button:hover {
+    background-color: #218838; 
+  }
+  .coupon-input input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 14px;
+    color: #333;
+    margin-right: 10px;
+    width: 200px;
+  }

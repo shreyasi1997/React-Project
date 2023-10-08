@@ -1,0 +1,14 @@
+
+    .link {
+        text-decoration: none; 
+        color: rgb(78, 78, 78); 
+      }
+      .activeLink {
+        font-weight: bold; 
+        color: blue;
+        transition: color 0.3s ease;
+      }
+      .cart-quantity{
+        font-size: 18px;
+        margin-top: 10px;
+      }

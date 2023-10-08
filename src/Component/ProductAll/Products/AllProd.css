@@ -1,0 +1,53 @@
+.best-sale-highlight {
+    position: relative;
+    text-align: center;
+  }
+  
+  .best-sale-ribbon {
+    position: absolute;
+    margin-top: -80px;
+    left: 0;
+    background-color: #ff5722; 
+    color: #fff; 
+    padding: 5px 10px;
+    font-weight: bold;
+    transform: rotate(-0deg);
+    transform-origin: left top;
+    z-index: 1;
+    margin-left: 45px;
+  }
+  .highlight-price{
+      color: #ff5722;
+  }
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 12px;
+  }
+  .pagination button {
+    width: 40px; 
+    height: 40px; 
+    margin: 0 5px; 
+  }
+  
+  .pagination-item {
+    cursor: pointer;
+    padding: 18px 15px;
+    margin: 0 9px;
+    border: 2px solid #ccc;
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pagination-item:hover {
+    background-color: #ccc;
+  }
+  
+  .pagination-item.active {
+    background-color: #007bff;
+    color: white;
+  }
+
+
+
