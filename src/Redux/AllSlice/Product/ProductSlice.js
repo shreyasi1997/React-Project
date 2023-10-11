@@ -45,9 +45,18 @@ export const addToCart = createAsyncThunk(
 export const removeToCard= createAsyncThunk(
   "product/removeproduct",
   async(productId)=>{
+    
     return productId;
   }
 )
+
+//remove all
+export const clearCart = createAsyncThunk(
+  "product/clearCart",
+  async () => {
+    return true;
+  }
+);
 
 // Async action to increment the quantity of a product in the cart
 export const incrementCartItem = createAsyncThunk(
@@ -75,6 +84,7 @@ export const fetchUserOrders = createAsyncThunk(
     }
   }
 );
+
 
 const initialState = {
   isLoading: false,
@@ -132,6 +142,9 @@ export const productSlice = createSlice({
         (product) => product.id !== action.payload
       );
     })
+    builder.addCase(clearCart.fulfilled, (state) => {
+      state.cart = [];
+    });
     builder.addCase(incrementCartItem.fulfilled, (state, action) => {
       const productToUpdate = state.cart.find(
         (product) => product.id === action.payload

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Box, Button, Typography } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeToCard } from '../../../Redux/AllSlice/Product/ProductSlice';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'; // Import the cart icon
 import { incrementCartItem, decrementCartItem } from '../../../Redux/AllSlice/Product/ProductSlice';
 import { Link } from "react-router-dom";
 import { useEffect } from 'react';
@@ -46,17 +45,15 @@ const Cart = () => {
     return total;
   }, 0);
 
-  // Apply a 20% discount if the total glass quantity is greater than or equal to 2
-  const discount = totalGlassQuantity >= 2 ? 0.2 : 0; // 20% discount if 2 or more glasses
-
+ 
+  const discount = totalGlassQuantity >= 2 ? 0.2 : 0; 
+  
   // Calculate the discounted amount
   const discountAmount = totalPayment * discount;
 
   const applyCouponCode = () => {
-    // Implement your coupon code validation logic here
-    // For example, check if the coupon code is valid
-    // You can replace this with your actual logic
-    if (couponCode === 'DIS20' && cart.length > 1)  {
+   
+    if (couponCode === 'DIS20' && cart.length  > 1 )  {
       // Apply a 20% discount
       setAppliedDiscount(0.2);
     } else {
@@ -70,10 +67,7 @@ const Cart = () => {
 
   return (
     <div className='cart'>
-       {/* <div className='cart-icon'>
-        <ShoppingCartIcon />
-        <span className='cart-quantity'>{totalQuantity}</span>
-      </div> */}
+    
       <Box
         display='flex'
         flexDirection='column'

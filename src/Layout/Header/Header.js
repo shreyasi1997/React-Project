@@ -195,8 +195,6 @@ const Header = () => {
           </Toolbar>
         </AppBar>
       </ThemeProvider>
-
-      {/* Add the ToastContainer at the end of your component */}
       <ToastContainer />
     </>
   );

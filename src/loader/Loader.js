@@ -8,13 +8,13 @@ const Loader = () => {
     // Simulate a loading delay of 3 seconds (adjust as needed)
     const loadingTimeout = setTimeout(() => {
       setIsLoading(false);
-    }, 3000); // Adjust the timeout to your desired duration in milliseconds
+    }, 90000); // Adjust the timeout to your desired duration in milliseconds
 
     return () => clearTimeout(loadingTimeout);
   }, []);
 
   return isLoading ? (
-    <div className="text-loader font-monoton flex flex-col gap-1 items-center">
+    <div className="text-loader font">
       <span>
         <img
           width={100}

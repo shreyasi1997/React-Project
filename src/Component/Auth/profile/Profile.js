@@ -37,7 +37,8 @@ const ProfilePage = () => {
     ? `https://wtsacademy.dedicateddevelopers.us/uploads/user/profile_pic/${profile_pic}`
     : 'placeholder_image_url.jpg'; // Replace with a default placeholder image URL
     console.log(profileImageUrl)
-
+    const capitalizedFirstName = first_name.charAt(0).toUpperCase() + first_name.slice(1);
+    const capitalizedLastName = last_name.charAt(0).toUpperCase()+ last_name.slice(1)
   const menuItems = [
     { text: 'Messages', icon: 'message' },
     { text: 'Events', icon: 'event' },
@@ -58,7 +59,7 @@ const ProfilePage = () => {
         <Paper elevation={3} className="profile-paper">
           <Avatar alt={first_name} src={profileImageUrl} className="profile-avatar" />
           <Typography variant="h4" gutterBottom className="profile-heading">
-            {first_name} {last_name}
+            {capitalizedFirstName} {capitalizedLastName}
           </Typography>
           {isLoading ? (
             <Loader />
@@ -68,7 +69,8 @@ const ProfilePage = () => {
             </Typography>
           ) : (
             <div className="profile-details">
-              <Typography variant="body1">Email: {email}</Typography>
+              <Typography variant="body1">Email: {email}</Typography> 
+             
             </div>
           )}
         </Paper>

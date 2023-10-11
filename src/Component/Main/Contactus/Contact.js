@@ -28,43 +28,17 @@ const Contact = () => {
     e.preventDefault();
     console.log('Form data:', formData);
 
-    try {
-      const response = await fetch('/api/sendEmail', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+   
 
-      if (response.status === 200) {
-        console.log('Email sent successfully');
+    
         // Show a success message 
         Swal.fire({
           icon: 'success',
           title: 'Email Sent!',
           text: 'Your message has been sent successfully.',
         });
-        // Clear the form
-        setFormData({
-          name: '',
-          email: '',
-          message: '',
-        });
-      } else {
-        console.error('Email sending failed');
-        // Show an error message
-        Swal.fire({
-          icon: 'success',
-          title: 'Email Sent!',
-          text: 'Your message has been sent successfully.',
-        });
       }
-    } catch (error) {
-      console.error('Error sending email:', error);
-    }
-  };
-
+       
   return (
     <div style={{ backgroundColor: '#f7f7f7', minHeight: '500px' }}>
       <div>
@@ -149,19 +123,18 @@ const Contact = () => {
               </Typography>
               <Typography variant="body1">
                 <ul>
-                  <li>Monday to Friday: 10am to 9 pm</li>
-                  <li>Saturday : 10am to 5 pm</li>
-                  <li>Sunday is a holiday</li>
-                  <li>Call us: 9051743756;</li>
-                  <li>email us: example@gmail.com</li>
-                  <li>
+                 Monday to Friday: 10am to 9 pm
+                  Saturday : 10am to 5 pm
+                  Sunday is a holiday
+                 Call us: 9051743756;
+                  email us: example@gmail.com
+                
                     We have been helping global companies and established brands
                     reimagine their business by building
-                  </li>
-                  <li>
+                 
                     We have been helping global companies and established brands
-                    reimagine their business by building
-                  </li>
+                    reimagine their business by building.
+                  
                 </ul>
               </Typography>
             </Paper>

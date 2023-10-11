@@ -162,7 +162,7 @@ const SignIn = () => {
                   variant="outlined"
                   fullWidth
                   id="last_name"
-                  label="Last Name"
+                  label="Last Name*"
                   name="last_name"
                   value={state.last_name}
                   onChange={changeHandler}

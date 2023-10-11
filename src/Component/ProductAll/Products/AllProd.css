@@ -5,7 +5,7 @@
   
   .best-sale-ribbon {
     position: absolute;
-    margin-top: -80px;
+    margin-top: -325px;
     left: 0;
     background-color: #ff5722; 
     color: #fff; 
@@ -14,7 +14,7 @@
     transform: rotate(-0deg);
     transform-origin: left top;
     z-index: 1;
-    margin-left: 45px;
+    margin-left: 150px;
   }
   .highlight-price{
       color: #ff5722;

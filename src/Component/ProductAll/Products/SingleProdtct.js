@@ -31,6 +31,8 @@ const SingleProduct = () => {
   const { selectedProduct, cart } = useSelector((state) => state.products);
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
+  let authToken=window.sessionStorage.getItem('token')
+  console.log("AuthToken: ",authToken);
 
   useEffect(() => {
     dispatch(selectProduct(id))
@@ -48,24 +50,40 @@ const SingleProduct = () => {
 
   const handleAddToCart = () => {
     dispatch(addToCart(selectedProduct));
-    toast.success(`Added to Cart: ${selectedProduct.name}`);
-    console.log("Added to Cart:", selectedProduct.name);
+    if( authToken===null)
+    {
+      toast.error("You Need to login first");
+      setTimeout(() => {
+        navigate('/login');
+      }, 5500);
+    }
+    else{
+      toast.success(`Added to Cart: ${selectedProduct.name}`);
+      setTimeout(() => {
+        navigate('/addcard');
+      }, 5500);
+    }
+    
 
-    setTimeout(() => {
-      navigate('/addcard');
-    }, 5500);
+    
   };
 
   const handleAddToWishlist = () => {
     dispatch(addToWishlist(selectedProduct));
-    toast.success(`Added to Wishlist: ${selectedProduct.name}`);
-    console.log("Added to Wishlist:", selectedProduct.name);
-
-    setTimeout(() => {
-      navigate('/addwish');
-    }, 5500);
+    if( authToken===null)
+    {
+      toast.error("You Need to login");
+      setTimeout(() => {
+        navigate('/login');
+      }, 5500);
+    }
+    else{
+      toast.success(`Added to Wishlist: ${selectedProduct.name}`);
+      setTimeout(() => {
+        navigate('/addwish');
+      }, 5500);
+    }
   };
-
   const handleBuyNow = () => {
     console.log("Buy Now:", selectedProduct.name);
   };
@@ -165,9 +183,6 @@ const SingleProduct = () => {
                     Weight: {selectedProduct.weight}
                   </Typography>
                   <Typography variant="subtitle2" color="textSecondary">
-                    Quantity: {selectedProduct.quantity}
-                  </Typography>
-                  <Typography variant="subtitle2" color="textSecondary">
                     Rating: {generateStars(selectedProduct.rating)}
                   </Typography>
                   <Typography variant="h5" mt={2}>
@@ -188,5 +203,4 @@ const SingleProduct = () => {
     </div>
   );
 };
-
 export default SingleProduct;

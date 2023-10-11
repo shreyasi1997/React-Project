@@ -49,6 +49,7 @@ const AllProduct = () => {
     }
   }, [products, sortBy]);
 
+
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = sortedProducts.slice(

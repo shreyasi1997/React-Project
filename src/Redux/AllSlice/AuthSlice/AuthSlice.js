@@ -10,6 +10,7 @@ const initial_value = {
     email: "",
     password: "",
     profile_pic: "",
+    ph_no: '',
     status: 0,
     message: "",
     authentication: window.sessionStorage.getItem("token") ? "true" : "false", // Check for an existing token
@@ -111,6 +112,7 @@ export const authSlice = createSlice({
                 state.first_name = action.payload.data.first_name;
                 state.last_name = action.payload.data.last_name;
                 state.email = action.payload.data.email;
+                state. ph_no=action.payload.data.ph_no;
                 state.profile_pic = action.payload.data.profile_pic;
                 state.data = action.payload.data;
                 // console.log(state.profile_pic)

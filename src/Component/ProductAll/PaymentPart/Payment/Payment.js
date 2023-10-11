@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import Swal from 'sweetalert2';
+import {clearCart} from '../../../../Redux/AllSlice//Product/ProductSlice'
 import {
   Paper,
   TextField,
@@ -12,19 +14,22 @@ import {
   Radio,
   RadioGroup,
 } from '@mui/material';
-
 import './Payment.css';
-
-
 const Payment = () => {
   const [paymentMethod, setPaymentMethod] = useState('creditCard');
+  const cart = useSelector((state) => state.products.cart) || [];
+  const { first_name} = useSelector((state) => state.auth);
   const navigate=useNavigate()
+  const dispatch=useDispatch()
   const [formErrors, setFormErrors] = useState({});
-
-  const handlePaymentMethodChange = (event) => {
+  const capitalizedFirstName = first_name.charAt(0).toUpperCase() + first_name.slice(1);
+const handlePaymentMethodChange = (event) => {
     setPaymentMethod(event.target.value);
   };
-
+  
+  const handleChanger = ()=>{
+       dispatch(clearCart())
+  }
   const handleFormSubmit = (event) => {
     event.preventDefault();
     const errors = {};
@@ -50,9 +55,11 @@ const Payment = () => {
     Swal.fire({
       icon: 'success',
       title: 'Payment Successful',
-      text: 'Thank you for your payment.',
+      text: (`Thank You ${capitalizedFirstName} Your Order is Confirm.`)
     }).then(() => {
+
      navigate('/orderDone')
+     handleChanger()
 
     });
   };
