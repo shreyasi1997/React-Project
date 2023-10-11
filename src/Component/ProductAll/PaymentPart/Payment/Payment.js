@@ -54,8 +54,8 @@ const handlePaymentMethodChange = (event) => {
     }
     Swal.fire({
       icon: 'success',
-      title: 'Payment Successful',
-      text: (`Thank You ${capitalizedFirstName} Your Order is Confirm.`)
+      // title: 'Payment Successful',
+      title: (`Congrats ${capitalizedFirstName} Your Order is Confirm.`)
     }).then(() => {
 
      navigate('/orderDone')

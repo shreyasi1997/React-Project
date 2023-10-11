@@ -123,17 +123,17 @@ const Contact = () => {
               </Typography>
               <Typography variant="body1">
                 <ul>
-                 Monday to Friday: 10am to 9 pm
-                  Saturday : 10am to 5 pm
-                  Sunday is a holiday
-                 Call us: 9051743756;
-                  email us: example@gmail.com
+                 Monday to Friday: 10am to 9 pm<br/>
+                  Saturday : 10am to 5 pm.<br/>
+                  Sunday is a holiday.<br/>
+                 Call us: 9051743756;<br/>
+                  email us: example@gmail.com.<br/>
                 
                     We have been helping global companies and established brands
-                    reimagine their business by building
+                    reimagine their business by building<br/>
                  
                     We have been helping global companies and established brands
-                    reimagine their business by building.
+                    reimagine their business by building.<br/>
                   
                 </ul>
               </Typography>

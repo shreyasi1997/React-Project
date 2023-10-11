@@ -100,7 +100,7 @@ const SignIn = () => {
       return;
     }
 
-    setIsLoading(true); // Set loading to true when form is submitted
+    setIsLoading(true); 
 
     let formdata = new FormData();
     formdata.append('first_name', state.first_name);
@@ -119,16 +119,16 @@ const SignIn = () => {
             navigate('/login');
           }, 2000);
         } else {
-          // Show error notification
+         
           showNotification('Error: Registration failed. Please try again.', 'error');
         }
       })
       .catch((err) => {
-        // Show error notification
+       
         showNotification('Error: Registration failed. Please try again.', 'error');
       })
       .finally(() => {
-        setIsLoading(false); // Set loading to false after API call completes
+        setIsLoading(false); 
       });
   };
 

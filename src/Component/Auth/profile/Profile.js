@@ -35,7 +35,7 @@ const ProfilePage = () => {
 
   const profileImageUrl = profile_pic
     ? `https://wtsacademy.dedicateddevelopers.us/uploads/user/profile_pic/${profile_pic}`
-    : 'placeholder_image_url.jpg'; // Replace with a default placeholder image URL
+    : 'placeholder_image_url.jpg'; 
     console.log(profileImageUrl)
     const capitalizedFirstName = first_name.charAt(0).toUpperCase() + first_name.slice(1);
     const capitalizedLastName = last_name.charAt(0).toUpperCase()+ last_name.slice(1)

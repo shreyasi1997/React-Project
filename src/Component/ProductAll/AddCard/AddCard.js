@@ -13,6 +13,7 @@ const Cart = () => {
   const [couponCode, setCouponCode] = useState('');
   const [appliedDiscount, setAppliedDiscount] = useState(0);
   const [totalQuantity, setTotalQuantity] = useState(0);
+
   useEffect(() => {
     // Calculate and update the total quantity when cart changes
     const newTotalQuantity = cart.reduce((total, product) => {
@@ -37,37 +38,21 @@ const Cart = () => {
     return total + product.quantity * product.newPrice;
   }, 0);
 
-  // Calculate the total quantity of "glass" products in the cart
-  const totalGlassQuantity = cart.reduce((total, product) => {
-    if (product.name.toLowerCase() === 'glass') {
-      return total + product.quantity;
-    }
-    return total;
-  }, 0);
-
- 
-  const discount = totalGlassQuantity >= 2 ? 0.2 : 0; 
-  
-  // Calculate the discounted amount
-  const discountAmount = totalPayment * discount;
+  // Calculate the total payment with the discount applied
+  const discountedTotalPayment = totalPayment - (totalPayment * appliedDiscount);
 
   const applyCouponCode = () => {
-   
-    if (couponCode === 'DIS20' && cart.length  > 1 )  {
+    if (couponCode === 'DIS20' && totalQuantity >= 2) {
       // Apply a 20% discount
       setAppliedDiscount(0.2);
     } else {
-      // Invalid coupon code
+      // Invalid coupon code or not enough quantities
       setAppliedDiscount(0);
     }
   };
 
-  // Calculate the total payment with the discount applied
-  const discountedTotalPayment = totalPayment - discountAmount;
-
   return (
     <div className='cart'>
-    
       <Box
         display='flex'
         flexDirection='column'
@@ -142,7 +127,7 @@ const Cart = () => {
             <tfoot>
               <tr>
                 <td colSpan="3">
-                  {totalGlassQuantity >= 2 && (
+                  {appliedDiscount > 0 && (
                     <div className='coupon-code'>
                       Coupon Code: DISCOUNT20 (20% off applied)
                     </div>
@@ -150,7 +135,7 @@ const Cart = () => {
                 </td>
                 <td>Total:</td>
                 <td className='total-amount'>
-                  ₹{(discountedTotalPayment - (discountedTotalPayment * appliedDiscount)).toFixed(2)}
+                  ₹{discountedTotalPayment.toFixed(2)}
                 </td>
               </tr>
               <tr>
@@ -173,7 +158,6 @@ const Cart = () => {
             </tfoot>
           </table>
         )}
-        {/* Conditionally render the "Pay Now" button */}
         {cart.length > 0 && (
           <div className='pay-button'>
             <Link to="/payment"><button>Pay-Now</button></Link>

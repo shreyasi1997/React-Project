@@ -30,13 +30,13 @@ const Login = () => {
     password: '',
   });
   const [showPassword, setShowPassword] = useState(false);
-  const [isLoading, setIsLoading] = useState(false); // State for loading indicator
+  const [isLoading, setIsLoading] = useState(false); 
 
   const navigate = useNavigate();
 
-  // useEffect to control loading state
+  
   useEffect(() => {
-    setIsLoading(false); // Set loading to false initially
+    setIsLoading(false);
   }, []);
 
   const changeHandler = (e) => {
@@ -59,7 +59,7 @@ const Login = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    setIsLoading(true); // Set loading to true when form is submitted
+    setIsLoading(true);
 
     let formData = new FormData();
     formData.append('email', state.email);
@@ -85,7 +85,7 @@ const Login = () => {
       .catch((err) => {
         // Show error notification
         showNotification('Login failed. Please try again.', 'error');
-        resetFormFields(); // Reset form fields
+        resetFormFields(); 
       })
       .finally(() => {
         setIsLoading(false); // Set loading to false after API call completes
@@ -109,7 +109,7 @@ const Login = () => {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          {/* Conditional rendering based on loading state */}
+         
           {isLoading ? (
             <Loader />
           ) : (
