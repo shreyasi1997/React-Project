@@ -5,10 +5,9 @@ const Loader = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate a loading delay of 3 seconds (adjust as needed)
     const loadingTimeout = setTimeout(() => {
       setIsLoading(false);
-    }, 90000); // Adjust the timeout to your desired duration in milliseconds
+    }, 90000); 
 
     return () => clearTimeout(loadingTimeout);
   }, []);
