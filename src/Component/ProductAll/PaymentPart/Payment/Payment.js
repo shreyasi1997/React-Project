@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { clearCart } from '../../../../Redux/AllSlice/Product/ProductSlice';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Swal from 'sweetalert2'; 
+import Swal from 'sweetalert2';
+import {clearCart} from '../../../../Redux/AllSlice//Product/ProductSlice'
 import {
   Paper,
   TextField,
@@ -13,35 +10,57 @@ import {
   Typography,
   Container,
   Grid,
+  FormControlLabel,
+  Radio,
+  RadioGroup,
 } from '@mui/material';
 import './Payment.css';
-
 const Payment = () => {
   const [paymentMethod, setPaymentMethod] = useState('creditCard');
   const cart = useSelector((state) => state.products.cart) || [];
-  const { first_name } = useSelector((state) => state.auth);
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const { first_name} = useSelector((state) => state.auth);
+  const navigate=useNavigate()
+  const dispatch=useDispatch()
   const [formErrors, setFormErrors] = useState({});
   const capitalizedFirstName = first_name.charAt(0).toUpperCase() + first_name.slice(1);
-
-  const handlePaymentMethodChange = (event) => {
+const handlePaymentMethodChange = (event) => {
     setPaymentMethod(event.target.value);
   };
-
-  const handleChanger = () => {
-    dispatch(clearCart());
-  };
-
+  
+  const handleChanger = ()=>{
+       dispatch(clearCart())
+  }
   const handleFormSubmit = (event) => {
     event.preventDefault();
+    const errors = {};
+    if (!event.target.cardholderName.value) {
+      errors.cardholderName = 'Cardholder name is required';
+    }
 
+    if (!event.target.cardNumber.value || event.target.cardNumber.value.length !== 16) {
+      errors.cardNumber = 'Invalid  card should be 16 digit';
+    }
+
+    if (!event.target.expirationDate.value) {
+      errors.expirationDate = 'Expiration date is required';
+    }
+
+    if (!event.target.cvv.value || event.target.cvv.value.length !== 3) {
+      errors.cvv = 'Invalid CVV';
+    }
+    if (Object.keys(errors).length > 0) {
+      setFormErrors(errors);
+      return;
+    }
     Swal.fire({
       icon: 'success',
-      title: `Congrats ${capitalizedFirstName} Your Order is Confirmed.`,
+      // title: 'Payment Successful',
+      title: (`Congrats ${capitalizedFirstName} Your Order is Confirmed.`)
     }).then(() => {
-      navigate('/orderDone');
-      handleChanger();
+
+     navigate('/orderDone')
+     handleChanger()
+
     });
   };
 
@@ -122,6 +141,7 @@ const Payment = () => {
                 label="PhonePe"
               />
             </RadioGroup>
+
             <Button
               type="submit"
               variant="contained"

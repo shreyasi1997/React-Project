@@ -40,9 +40,6 @@ const RootRouting = () => {
           <Route path='categories/single/:id' element={<SingleProduct/>} />
           <Route path='payment' element={<Payment/>} />
           <Route path='orderDone' element={<OrderDone/>} />
-          
-        
-          
           <Route path='*' element={<PNF />} />
           </Routes>
           <Footer/>

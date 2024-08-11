@@ -19,8 +19,7 @@ const initial_value = {
 
 }
 export const signup = createAsyncThunk("user/signup",
-
-    async (userdata) => {
+async (userdata) => {
         const res = await axios.post(api_url, userdata, {
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
